@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts API -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .calendar th {
+            font-weight: 600;
+            color: #4B5563;
+        }
+
+        .calendar td {
+            border-radius: 4px;
+            color: #4B5563;
+            font-weight: 500;
+        }
+
+        .calendar .govt-holiday {
+            background-color: #EF4444;
+            color: white;
+        }
+
+        .calendar .leave {
+            background-color: #F59E0B;
+            color: white;
+        }
+
+        .notice-section ul li p {
+            font-size: 0.85rem;
+            line-height: 1.25rem;
+            color: #6B7280;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 h-screen bg-black text-white">
+            <div class="p-5">
+                <h1 class="text-2xl font-bold">
+                    <span class="text-red-600 text-end">H</span><span class="text-white">R.</span>
+                </h1>
+            </div>
+
+            <ul>
+                <li>
+                    <button id="overviewBtn" class="flex items-center p-4 w-full hover:bg-red-600 active:bg-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        Overview
+                    </button>
+                </li>
+                <li>
+                    <button id="hrBtn" class="flex items-center p-4 w-full hover:bg-red-600 active:bg-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        HR
+                    </button>
+                </li>
+            </ul>
+
+            <div class="absolute bottom-0 p-4 max-w-fit">
+                <!-- button should redirect to login -->
+                <a href="./loginv2.html">
+                    <button class="flex items-center p-4 w-fit hover:bg-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 16l4-4m0 0l-4-4m4 4H3" />
+                        </svg>
+                        Logout
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="w-5/6 p-6 flex">
+            <!-- Left Column: Document Cards -->
+            <div class="w-2/3">
+                <!-- Weather and Time Banner -->
+                <div
+                    class="bg-gradient-to-r from-yellow-400 to-red-400 text-white p-4 rounded-lg flex justify-between items-center mb-6">
+                    <div>
+                        <h2 class="text-2xl">21 September 2022</h2>
+                        <p>Partly Cloudy</p>
+                    </div>
+                    <div>
+                        <span>Don’t forget to fill your time sheet</span>
+                        <h3 class="text-3xl">10:11 AM</h3>
+                    </div>
+                </div>
+
+                <!-- Document Cards -->
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <!-- Card 1: Rose Color -->
+                    <div class="relative flex flex-col bg-white shadow-md border border-slate-200 rounded-lg w-fill m-2">
+                        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                            <span class="text-3xl font-bold">Title</span>
+                        </div>
+                        <div class="p-4 bg-rose-500 rounded-lg">
+                            <h5 class="mb-1 text-slate-300 text-sm font-bold">Document</h5>
+                            <h4 class="mb-1 text-slate-800 font-bold">Information</h4>
+                            <h5 class="text-slate-300 font-medium text-xs">Date uploaded</h5>
+                        </div>
+                        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1 text-right">
+                            <span class="text-sm text-slate-600 font-medium">View</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Blue Color -->
+                    <div class="relative flex flex-col bg-white shadow-md border border-slate-200 rounded-lg">
+                        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                            <span class="text-3xl font-bold">Title</span>
+                        </div>
+                        <div class="p-4 bg-blue-500 rounded-lg">
+                            <h5 class="mb-1 text-slate-300 text-sm font-bold">Document</h5>
+                            <h4 class="mb-1 text-slate-800 font-bold">Information</h4>
+                            <h5 class="text-slate-300 font-medium text-xs">Date uploaded</h5>
+                        </div>
+                        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1 text-right">
+                            <span class="text-sm text-slate-600 font-medium">View</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Gray Color -->
+                    <div class="relative flex flex-col bg-white shadow-md border border-slate-200 rounded-lg">
+                        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                            <span class="text-3xl font-bold">Title</span>
+                        </div>
+                        <div class="p-4 bg-gray-500 rounded-lg">
+                            <h5 class="mb-1 text-slate-300 text-sm font-bold">Document</h5>
+                            <h4 class="mb-1 text-slate-800 font-bold">Information</h4>
+                            <h5 class="text-slate-300 font-medium text-xs">Date uploaded</h5>
+                        </div>
+                        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1 text-right">
+                            <span class="text-sm text-slate-600 font-medium">View</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Green Color -->
+                    <div class="relative flex flex-col bg-white shadow-md border border-slate-200 rounded-lg">
+                        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                            <span class="text-3xl font-bold">Title</span>
+                        </div>
+                        <div class="p-4 bg-green-500 rounded-lg">
+                            <h5 class="mb-1 text-slate-300 text-sm font-bold">Document</h5>
+                            <h4 class="mb-1 text-slate-800 font-bold">Information</h4>
+                            <h5 class="text-slate-300 font-medium text-xs">Date uploaded</h5>
+                        </div>
+                        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1 text-right">
+                            <span class="text-sm text-slate-600 font-medium">View</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Yellow Color -->
+                    <div class="relative flex flex-col bg-white shadow-md border border-slate-200 rounded-lg">
+                        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                            <span class="text-3xl font-bold">Title</span>
+                        </div>
+                        <div class="p-4 bg-yellow-500 rounded-lg">
+                            <h5 class="mb-1 text-slate-300 text-sm font-bold">Document</h5>
+                            <h4 class="mb-1 text-slate-800 font-bold">Information</h4>
+                            <h5 class="text-slate-300 font-medium text-xs">Date uploaded</h5>
+                        </div>
+                        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1 text-right">
+                            <span class="text-sm text-slate-600 font-medium">View</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Violet Color -->
+                    <div class="relative flex flex-col bg-white shadow-md border border-slate-200 rounded-lg">
+                        <div class="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
+                            <span class="text-3xl font-bold">Title</span>
+                        </div>
+                        <div class="p-4 bg-violet-500 rounded-lg">
+                            <h5 class="mb-1 text-slate-300 text-sm font-bold">Document</h5>
+                            <h4 class="mb-1 text-slate-800 font-bold">Information</h4>
+                            <h5 class="text-slate-300 font-medium text-xs">Date uploaded</h5>
+                        </div>
+                        <div class="mx-3 border-t border-slate-200 pb-3 pt-2 px-1 text-right">
+                            <span class="text-sm text-slate-600 font-medium">View</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Calendar and Notice -->
+            <div class="w-1/3 pl-4">
+                <!-- Personal Calendar -->
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Personal Calendar</h3>
+                    <div class="flex justify-between items-center mb-4">
+                        <span>September 2022</span>
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <table class="calendar w-full text-center">
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="govt-holiday">1</td>
+                            <td class="leave">2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                        <tr>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                        <tr>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                        <tr>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </table>
+                    <div class="mt-4 text-xs">
+                        <span class="bg-red-500 text-white px-2 py-1 rounded">Govt Holiday</span>
+                        <span class="bg-yellow-500 text-white px-2 py-1 rounded">Leave</span>
+                    </div>
+                </div>
+
+                <!-- Notice Section -->
+                <!-- Notice Section -->
+                <div class="bg-white p-6 rounded-lg shadow-md notice-section">
+                    <h3 class="text-lg font-semibold mb-4">Notice</h3>
+                    <ul>
+                        <li class="mb-4 flex justify-between items-start">
+                            <div>
+                                <span class="text-gray-500 text-sm font-medium">05 June</span>
+                                <span class="text-gray-700 text-sm"><span>Annual Retreat</span> - Announcement concerning public
+                                    holidays...</p>
+                            </div>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Details</a>
+                        </li>
+                        <li class="mb-4 flex justify-between items-start">
+                            <div>
+                                <span class="text-gray-500 text-sm font-medium">05 June</span>
+                                <p class="text-gray-700 text-sm">Annual Retreat - Announcement concerning public
+                                    holidays...</p>
+                            </div>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Details</a>
+                        </li>
+                        <!-- Add more notice items as needed -->
+                        <li class="mb-4 flex justify-between items-start">
+                            <div>
+                                <span class="text-gray-500 text-sm font-medium">05 June</span>
+                                <p class="text-gray-700 text-sm">Annual Retreat - Announcement concerning public
+                                    holidays...</p>
+                            </div>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Details</a>
+                        </li>
+                        <!-- Add more notice items as needed -->
+                        <li class="mb-4 flex justify-between items-start">
+                            <div>
+                                <span class="text-gray-500 text-sm font-medium">05 June</span>
+                                <p class="text-gray-700 text-sm">Annual Retreat - Announcement concerning public
+                                    holidays...</p>
+                            </div>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Details</a>
+                    </ul>
+                    <a href="#" class="text-blue-600 text-sm font-medium hover:underline block text-right">All
+                        Notices</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

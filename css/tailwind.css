@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color variables */
+    --black_900: #000000;
+    --blue_gray_100: #d0d5dd;
+    --blue_gray_300: #94a3b8;
+    --blue_gray_400: #868686;
+    --blue_gray_700: #4b5768;
+    --deep_purple_a100: #c084fc;
+    --gray_100: #f1f5f9;
+    --gray_500: #999da3;
+    --gray_700: #666666;
+    --gray_900: #191d23;
+    --light_green_700: #65a30d;
+    --red_400: #eb5757;
+    --red_500: #ef4444;
+    --red_500_01: #eb4335;
+    --white_a700: #ffffff;
+    /*------Border radius variables‒‒‒‒‒‒*/
+    --radius-xs: 3px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+    --radius-xl: 22px;
+    --radius-2xl: 24px;
+    --radius-3xl: 26px;
+    --radius-4xl: 32px;
+    --radius-5xl: 44px;
+    --radius-6xl: 86px;
+    /*------Spacing variables‒‒‒‒‒‒*/
+    --space-xs: 6px;
+    --space-sm: 10px;
+    --space-md: 12px;
+    --space-lg: 14px;
+    --space-xl: 16px;
+    --space-2xl: 17px;
+    --space-3xl: 18px;
+    --space-4xl: 20px;
+    --space-5xl: 24px;
+    --space-6xl: 28px;
+    --space-7xl: 32px;
+  }
+}
+
+@layer components {
+  /* Button CSS */
+  .ui.button.round {
+    @apply rounded-[3px];
+    .ui.button.size-xs;
+  }
+
+  .ui.button.size-xs {
+    @apply h-[38px] px-[34px] text-[16px];
+  }
+
+  .ui.button.fill.red_500_01 {
+    @apply bg-red-500_01 text-white-a700;
+  }
+
+  .ui.button {
+    @apply flex flex-row items-center justify-center text-center cursor-pointer whitespace-nowrap text-white-a700 font-inter text-[16px] font-semibold bg-red-500_01 rounded-[3px];
+  }
+
+  /* Input CSS */
+  .ui.input.round {
+    @apply rounded-md;
+  }
+
+  .ui.input.size-sm {
+    @apply h-[38px] px-2.5;
+  }
+  .ui.input.size-xs {
+    @apply h-[38px] px-2.5 text-[12px];
+  }
+  .ui.input.bordered.blue_gray_700 {
+    @apply border-blue_gray-700 border-[0.8px] border-solid text-blue_gray-700;
+  }
+  .ui.input.bordered.blue_gray_100 {
+    @apply border-blue_gray-100 border-[0.8px] border-solid text-gray-500;
+  }
+  .ui.input {
+    @apply flex items-center justify-center cursor-text border-[0.8px] border-solid roun;
+  }
+
+  /* Checkbox CSS */
+  .ui.checkbox.square {
+    @apply rounded-[0px];
+  }
+  .ui.checkbox.size-xs {
+  }
+  @apply h-[20px] w-[20px] text-[16px];
+  .ui.checkbox {
+    @apply flex items-center gap-[5px] cursor-pointer;
+  }
+
+  /* Text CSS */
+  .ui.text.size-textmd {
+    @apply text-[14px] font-normal not-italic;
+  }
+  .ui.text.size-textlg {
+    @apply text-[24px] font-normal not-italic md:text-[22px];
+  }
+  .ui.text {
+    @apply text-white-a700 font-poppins;
+  }
+
+  /* Heading CSS */
+  .ui.heading.size-headingxs {
+    @apply text-[12px] font-semibold;
+  }
+  .ui.heading.size-textxs {
+    @apply text-[9px] font-medium;
+  }
+  .ui.heading.size-texts {
+    @apply text-[12px] font-medium;
+  }
+  .ui.heading.size-headings {
+    @apply text-[19px] font-bold;
+  }
+  .ui.heading.size-headingmd {
+    @apply text-[20px] font-bold italic;
+  }
+  .ui.heading.size-heading lg {
+    @apply text-[56px] font-semibold md:text-[48px] sm:text-[42px];
+  }
+  .ui.heading {
+    @apply text-blue_gray-300 font-roboto;
+  }
+}

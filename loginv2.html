@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Resource Portal - Sign In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex min-h-screen">
+
+        <!-- Left section with image and text -->
+        <div class="w-1/2 bg-cover bg-center relative" style="background-image: url('./public/images/img_image.png');">
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+
+            <div class="relative z-10 flex flex-col justify-center h-full px-16 text-white">
+                <h1 class="text-5xl font-bold mb-4">Our People Are Our Greatest Asset.</h1>
+                <p class="text-lg">Empowering your work force.</p>
+            </div>
+        </div>
+
+        <!-- Right section with sign-in form -->
+        <div class="w-1/2 flex flex-col justify-center items-center bg-white px-16">
+            <!-- Form -->
+            <h2 class="text-2xl font-bold text-gray-800 mb-8">
+                <span class="text-red-500">HUMAN</span> RESOURCE PORTAL<span class="text-red-500">.</span>
+            </h2>
+
+            <!-- form redirect -->
+            <form action="" method="post" class="w-full max-w-sm space-y-6" onsubmit="loginRedirect(event)">
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email"
+                        class="mt-1 block w-full px-4 py-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        placeholder="johndoe@interactivedigital.com.gh" required />
+                </div>
+
+                <!-- Password -->
+                <div class="relative">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="mt-1 block w-full px-4 py-2 border rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        placeholder="••••••••" required />
+                    <a href="./passwordreset.html"
+                        class="absolute right-0 top-2 text-sm text-red-500 hover:underline">Forgot Password?</a>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="flex items-center">
+                    <input id="remember-me" name="remember-me" type="checkbox"
+                        class="h-4 w-4 text-red-500 border-gray-300 rounded focus:ring-red-500 checked:bg-red-600 accent-red-600" />
+                    <label for="remember-me" class="ml-2 block text-sm text-gray-900">Keep me signed in</label>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit"
+                    class="w-full bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">Login
+                </button>
+
+                <!-- don't have an account  -->
+                <p class="text-sm text-gray-500">Don't have an account?
+                    <a href="./signupv2.html" class="text-red-500 hover:underline">Sign up here</a>
+                </p>
+
+                <script>
+                    function loginRedirect(event) {
+                        event.preventDefault(); // Prevent default form submission behavior
+                        if (document.getElementById('email').value !== '') {
+                            window.location.href = './panel3.html';
+                        }
+                    }
+                </script>
+            </form>
+
+            <!-- Decorative circles -->
+            <div class="absolute top-8 right-8">
+                <div class="w-16 h-16 bg-red-500 rounded-full absolute top-0 left-0"
+                    style="background-image: url(./public/images/image_elipse_1.png)"></div>
+                <div class="w-10 h-10 bg-yellow-500 rounded-full absolute top-12 left-8"
+                    style="background-image: url(./public/images/image_elipse_2.png)"></div>
+                <div class="w-20 h-20 bg-green-500 rounded-full absolute top-6 left-20"
+                    style="background-image: url(./public/images/image_elipse_3.png);"></div>
+                <!-- Add images as circular decorations -->
+                <img src="./public/images/image_elipse_1.png" class="w-16 h-16 rounded-full absolute top-0 right-10"
+                    alt="Image 1" />
+                <img src="./public/images/image_elipse_2.png" class="w-12 h-12 rounded-full absolute top-12 right-20"
+                    alt="Image 2" />
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="absolute bottom-5 flex justify-center w-full">
+                <div class="flex -space-x-4">
+                    <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">ID</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Touch Point</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Innova DDB</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Brand Alert</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Rezults</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

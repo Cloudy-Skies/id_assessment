@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Resource Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Style for a smooth fade-out transition */
+        body {
+            transition: opacity 1s ease;
+        }
+        body.fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('public/images/image.png');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center font-[Poppins]">
+                Our Human Resource<br />Portal<span class="text-gray-300">.</span>
+            </h1>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="absolute bottom-5 flex justify-center w-full">
+            <div class="flex -space-x-4">
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">ID</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Touch Point</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Innova DDB</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Brand Alert</a>
+                <a href="#" class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200">Rezults</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to redirect the user after 2 seconds
+        setTimeout(() => {
+            // Add the fade-out class to the body to trigger the CSS transition
+            document.body.classList.add('fade-out');
+            
+            // Wait for the fade-out transition to finish (1 second in this case), then redirect
+            setTimeout(() => {
+                // Redirect to login.html
+                window.location.href = './loginv2.html';
+            }, 5000); // Delay for the duration of the fade-out (1 second)
+        }, 2000); // Initial delay of 2 seconds before starting the transition
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* Style for a smooth fade-out transition */
+        body {
+            transition: opacity 1s ease;
+        }
+        body.fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Our Human Resource Portal</h1>
+        <p>Redirecting you to the login page...</p>
+    </div>
+
+    <script>
+        // Function to redirect the user after 2 seconds
+        setTimeout(() => {
+            // Add the fade-out class to the body to trigger the CSS transition
+            document.body.classList.add('fade-out');
+            
+            // Wait for the fade-out transition to finish (1 second in this case), then redirect
+            setTimeout(() => {
+                // Redirect to login.html
+                window.location.href = 'login.html';
+            }, 1000); // Delay for the duration of the fade-out (1 second)
+        }, 2000); // Initial delay of 2 seconds before starting the transition
+    </script>
+</body>
+</html> -->
